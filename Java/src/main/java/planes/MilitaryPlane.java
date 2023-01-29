@@ -1,4 +1,4 @@
-package Planes;
+package planes;
 
 import models.MilitaryType;
 
@@ -8,8 +8,8 @@ public class MilitaryPlane extends Plane{
 
     private MilitaryType type;
 
-    public MilitaryPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity, MilitaryType type) {
-        super(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
+    public MilitaryPlane(PlaneProperties planeProperties, MilitaryType type) {
+        super(planeProperties);
         this.type = type;
     }
 
@@ -29,8 +29,7 @@ public class MilitaryPlane extends Plane{
         if (this == o) return true;
         if (!(o instanceof MilitaryPlane)) return false;
         if (!super.equals(o)) return false;
-        MilitaryPlane that = (MilitaryPlane) o;
-        return type == that.type;
+        return type == ((MilitaryPlane) o).type;
     }
 
     @Override
